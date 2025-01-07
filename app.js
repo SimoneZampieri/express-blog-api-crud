@@ -1,5 +1,5 @@
 const express = require("express");
-const postRouter = require();
+const postRouter = require('./postRouter');
 const app = express();
 
 const port = 3000;
