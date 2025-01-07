@@ -1,15 +1,18 @@
+const posts = require('../data/posts')
 
-exports.getAllPosts = (req, res) => {
-    res.send("Restituisce tutti i post");
+const index = (req, res) =>{
+    res.json(posts);
 };
 
-exports.getPostById = (req, res) => {
-    res.send(`Restituisce il post con ID ${req.params.id}`);
+const show = (req,res) =>{
+    const post = posts.find(post => {
+        post.id == req.params.id
+    });
 };
 
-exports.deletePostById = (req, res) => {
-    res.status(204).send();
+const delete = (req,res) => {
+    const post = posts.find(post => {
+        post.id == req.params.id
+    });
 };
-
-
 
