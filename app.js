@@ -1,17 +1,15 @@
 const express = require("express");
-const router = express.Router();
-const postController = require("./controllers/postController");
+const postRouter = require();
+const app = express();
 
-router.get("/posts", postController.index);
+const port = 3000;
 
-router.get("/posts/:id", postController.show);
-
-router.delete("/posts/:id", postController.destroy);
-
-//Avvio del server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server avviato sulla porta ${PORT}`);
+app.get('/', (req, res) => {
+    res.send('Lista post')
 });
 
-module.exports = router;
+app.use('/posts', postRouter);
+
+app.listen(port, () =>{
+    console.log(`Sono in ascolto sulla porta ${port}`)
+});
