@@ -5,18 +5,12 @@ const index = (req, res) =>{
 };
 
 const show = (req,res) =>{
-    const post = posts.find(post => {
-        post.id == req.params.id
-    });
-
+    const post = posts.find(post => post.id == req.params.id);
     res.json(post);
 };
 
 const destroy = (req,res) => {
-    const post = posts.find(post => {
-        post.id == req.params.id
-    });
-
+    const post = posts.find(post => post.id == req.params.id);
     posts.splice(posts.indexOf(post), 1);
 };
 

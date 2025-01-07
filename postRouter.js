@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router(); 
 const postController = require('./controllers/postController');
 
-router.get("/posts", postController.index);
+router.get("/", postController.index);
 
-router.get("/posts/:id", postController.show);
+router.get("/:id", postController.show);
 
-router.delete("/posts/:id", postController.destroy);
+router.delete("/:id", postController.destroy);
 
 module.exports = router;
