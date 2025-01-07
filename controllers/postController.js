@@ -1,4 +1,4 @@
-// controllers/postController.js
+
 exports.getAllPosts = (req, res) => {
     res.send("Restituisce tutti i post");
 };
@@ -10,3 +10,6 @@ exports.getPostById = (req, res) => {
 exports.deletePostById = (req, res) => {
     res.status(204).send();
 };
+
+
+

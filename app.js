@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const postController = require("./controllers/postController");
 
-router.get("/posts", postController.getAllPosts);
+router.get("/posts", postController.index);
 
-router.get("/posts/:id", postController.getPostById);
+router.get("/posts/:id", postController.show);
 
-router.delete("/posts/:id", postController.deletePostById);
+router.delete("/posts/:id", postController.destroy);
 
 //Avvio del server
 const PORT = process.env.PORT || 3000;
