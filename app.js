@@ -1,6 +1,8 @@
 const express = require("express");
 const postRouter = require('./postRouter');
 const app = express();
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 
 const port = 3000;
 
