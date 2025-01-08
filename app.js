@@ -13,3 +13,8 @@ app.use('/posts', postRouter);
 app.listen(port, () =>{
     console.log(`Sono in ascolto sulla porta ${port}`)
 });
+
+app.post('/store', (req, res) => {
+    console.log(req.body);
+    res.send('Dati ricevuti');
+});
