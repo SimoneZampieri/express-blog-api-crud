@@ -32,7 +32,7 @@ app.post("/store", (req, res) => {
 
 app.put("/store/:id", (req, res) => {
   const postId = parseInt(req.params.id);
-  const postIndex = posts.findIndex((post) => post.id === postId);
+  const postIndex = posts.findIndex(post => post.id === postId);
 
   if (postIndex !== -1) {
     posts[postIndex] = {
@@ -42,7 +42,7 @@ app.put("/store/:id", (req, res) => {
       images: req.body.images
     };
     console.log("Post aggiornato:", posts[postIndex]);
-    res.status(201).send(posts[postIndex]);
+    res.status(200).send(posts[postIndex]);
   } else {
     res.status(404).send({ message: "Post non trovato" });
   };
