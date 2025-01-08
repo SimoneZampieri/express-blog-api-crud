@@ -6,6 +6,8 @@ app.use(bodyParser.json())
 
 const port = 3000;
 
+let posts = [];
+
 app.get('/', (req, res) => {
     res.send('Lista post')
 });
@@ -17,6 +19,13 @@ app.listen(port, () =>{
 });
 
 app.post('/store', (req, res) => {
-    console.log(req.body);
-    res.send('Dati ricevuti');
+    const newPost = {
+        id: posts.length + 1,
+        title: req.body.title,
+        content: req.body.content,
+        images: req.body.images
+    };
+    posts.push(newPost);
+    console.log('Nuovo post aggiunto:', newPost);
+    res.status(201).send(newPost);
 });
