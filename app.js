@@ -29,3 +29,10 @@ app.post('/store', (req, res) => {
     console.log('Nuovo post aggiunto:', newPost);
     res.status(201).send(newPost);
 });
+
+app.put('/store/:id', (req, res) =>{
+    const postId = parseInt(req.params.id);
+    const postIndex = posts.findIndex(post => post.id === postId);
+
+    
+})
