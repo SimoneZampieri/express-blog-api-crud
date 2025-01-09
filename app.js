@@ -3,6 +3,10 @@ const postRouter = require("./postRouter");
 const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+const {notFoundHandler, errorHandler} = require('./middlewares/middleware')
+
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 const port = 3000;
 
